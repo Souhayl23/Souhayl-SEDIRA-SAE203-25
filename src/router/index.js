@@ -1,9 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import AccueilView    from      '../views/AccueilView.vue'
-import FilmsView      from      '../views/FilmsView.vue'
-import SeriesView     from      '../views/SeriesView.vue'
-import KidsView       from      '../views/KidsView.vue'
-import MangasView     from      '../views/MangasView.vue'
+import ProgrammationView      from      '../views/ProgrammationView.vue'
+import ArtistesView     from      '../views/ArtistesView.vue'
+import FestivalView     from      '../views/FestivalView.vue'
+import ContactView     from      '../views/ContactView.vue'
+
+import ConcertView     from      '../views/ConcertView.vue'
 
 import ListeVideo     from      '../views/video/ListeView.vue'
 import CreateVideo     from      '../views/video/CreateView.vue'
@@ -19,10 +21,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: '/',          name: 'AccueilView',            component: AccueilView  },
-    { path: '/films',     name: 'FilmsView',              component: FilmsView  },
-    { path: '/series',    name: 'SeriesView',             component: SeriesView  },
-    { path: '/kids',      name: 'KidsView',               component: KidsView  },
-    { path: '/mangas',    name: 'MangasView',             component: MangasView  },
+    { path: '/programmation',     name: 'ProgrammationView',              component: ProgrammationView  },
+    { path: '/artistes',    name: 'ArtistesView',             component: ArtistesView  },
+    { path: '/festival',    name: 'FestivalView',             component: FestivalView  },
+    { path: '/contact',    name: 'ContactView',             component: ContactView  },
+    { path: '/concert',    name: 'ConcertView',             component: ConcertView  },
 
     { path: '/videos',    name: 'ListeVideo',             component: ListeVideo  },
     { path: '/createVideo',    name: 'CreateVideo',             component: CreateVideo  },

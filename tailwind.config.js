@@ -6,14 +6,17 @@ module.exports = {
   theme: {
     extend: {
       "colors": {
-        // Ici vos couleurs exportées de Figma
-      },
-      "fontFamily": {
-        // Ici vos familles de polices exportées de Figma
-        // Ne pas oublier de les charger dans '/index.html' !
+  // Ici vos couleurs exportées de Figma
       },
     },
+    fontFamily: {
+      "bebas":["'Bebas Neue'", 'cursive'],
+      'sans': ['Inter', 'sans'],
+      'serif': ['Inter', 'sans-serif'],
+      'mono': ['Inter', 'sans-mono'],
+      'body': ['Inter']
+    }
 
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
 }

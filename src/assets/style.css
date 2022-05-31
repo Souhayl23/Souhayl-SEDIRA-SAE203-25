@@ -21,9 +21,18 @@ i{
 
 }
 .titre{
+    margin-top:50px;
     text-align: center;
-    color:white;
-    font-size:1.2rem;        
+    font-family:'Bebas Neue';
+    color:#F6C139;
+    font-size:45px;        
+}
+.titre-sm{
+    margin-top:50px;
+    text-align: center;
+    text-family: "bebas";
+    color:#F6C139;
+    font-size:35px;        
 }
 .libelle{
     text-align:left;
@@ -32,6 +41,7 @@ i{
 }
 .texte{
     font-weight: normal;
+    text-family: "inter";
     font-size:.8rem;    
 }
 .resume{
@@ -77,9 +87,124 @@ nav .navbar-brand a{
 html, #app{
     background-color:#000000;
 }
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color:#FFAFAD ;
+    margin-bottom: 10%;
+  
+  
+  }
+  .formbody {
+    color: #FFAFAD;
+  
+  }
+  
+  .demi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+  .prenominput{
+    margin-right:4%;
+  }
+  
+  .prenom {
+    margin-right: 35%;
+  }
+  .form__input {
+    margin-bottom: 5%;
+    border-radius: 5px;
+    border: solid 2px #0E235B;
+    color:white;
+    
+  }
+  
+  
+  
+  .form__input input:focus,
+  .form__select select:focus {
+    outline: 0;
+  }
+  
+  .form__button {
+    border-radius: 5px;
+    background-color: #0E235B;
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--text-sm);
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    width: 68px;
+    height: 24px;
+    margin-left:38% ;
+    padding-bottom: 10%;
+  
+    
+  
+  }
+  
+  .hero__title--text2 {
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    font-size: var(--text-xxl);
+  }
+  .chapoform {
+  
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 16%;
+    color: #424242;
+    font-style: italic;
+    
+    margin-bottom: 50px;
+    min-height: 20vh;
+    display: flex;
+    gap: var(--space3x);
+    align-items: center;
+  
+  }
+  .chapoform2 {
+  
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 8%;
+    color: #424242;
+    font-style: italic;
+    
+    margin-bottom: 50px;
+    min-height: 20vh;
+    display: flex;
+    gap: var(--space3x);
+    align-items: center;
+  
+  }
+  .rectangle80 {
+    position:absolute;
+    width: 375px;
+    height: 208px;
+    left: 0px;
+    top: 220px; 
+    z-index: -2;
+  }
+  .rectangle42 {
+    position: absolute;
+    width: 374px;
+    height: 507px;
+    left: 0px;
+    top: 450px;
+    z-index: -2;
+  }
+  .form__label {
+    font-family: 'Lato', sans-serif;
+    padding:0;
+    color: #0E235B;
+  
+  
+  
+  }
 
-.img-responsive{
-    max-width : 100%;
-    height: auto;
-    display: block;
-}
+

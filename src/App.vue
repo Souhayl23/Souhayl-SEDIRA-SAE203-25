@@ -19,22 +19,22 @@
             <ul class="navbar-nav  ml-auto">
                 <li class="nav-item">
                   <div class="nav-link" >
-                    <RouterLink to="/films">Programmation</RouterLink>
+                    <RouterLink to="/programmation">Programmation</RouterLink>
                   </div>
                 </li>
                 <li class="nav-item">
                   <div class="nav-link" >
-                    <RouterLink to="/series">Artistes</RouterLink>
+                    <RouterLink to="/artistes">Artistes</RouterLink>
                   </div>
                 </li>
                 <li class="nav-item">
                   <div class="nav-link" >
-                    <RouterLink to="/kids">Festival</RouterLink>
+                    <RouterLink to="/festival">Festival</RouterLink>
                   </div>
                 </li>
                 <li class="nav-item">
                   <div class="nav-link" >
-                    <RouterLink to="/mangas">Contact</RouterLink>
+                    <RouterLink to="/contact">Contact</RouterLink>
                   </div>
                 </li>
 
@@ -42,32 +42,35 @@
             </ul >
 
         </div>
+
     </nav>
+
     <RouterView />
 
-
-
-
-
+    <Footer />
 
   </div>
+
 
 </template>
 
 <script>
 import logo from "./components/icons/logo.vue";
 import card from "./components/icons/card.vue";
+import Footer from "./components/icons/Footer.vue";
 
 
 export default {
   name: "App",
-  components: { logo, card },
+  components: { logo, card, Footer },
 };
 </script>
 
 <style>
   /* Import Styles application */
   @import '@/assets/style.css';
+  
+  
   
 </style>
 
