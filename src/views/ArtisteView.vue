@@ -4,15 +4,10 @@
    <img class="w-full h-auto max-h-[200px] object-cover" src="../assets/Pnl banner.png"/>
    <div class="px-9 py-3">
 
-      <h4 class="font-inter text-[#f6c139] text-[30px] lg:text-[20px] pb-2">PNL Concert</h4>
-       <p>Atterrissage de PNL à l’Accor Arena : les deux frères vous préparent un concerts exceptionnels dans le cadre du festival Only Rap. A ne pas manquer ! 
-      </p></div>
+      <h4 class="font-inter flex flex-col justify-center items-center text-[#f6c139] text-[20px] lg:text-[25px] pb-2">PNL</h4>
+       <p>PNL (acronyme de Peace N Lovés), est un groupe de rap français composé des frères Ademo et N.O.S, tous deux originaires de Corbeil-Essonnes (91). C'est au duo qu'on attribue la popularisation du "cloud rap" en France.</p></div>
       <div class="flex flex-col justify-center items-center">
-      <img class="w-[70%] h-[70%]  " src="../assets/pnl 2.png"/>
-      </div>
-      <h3 class="font-bebas text-white text-[20px] lg:text-[30px] my-8 ml-4">Artistes</h3>
-      <div class="flex flex-col justify-center items-center">
-        <RouterLink to="/artiste"><cardpnlArt /></RouterLink>
+      <img class="w-[70%] h-[70%]  " src="../assets/pnl 3.png"/>
       </div>
 
 </div>
@@ -28,7 +23,7 @@ import cardpnlArt from "../components/icons/cardpnlArt.vue";
 
 
 export default {
-  name: "ConcertView",
+  name: "ArtisteView",
   components: {boutonorangebig, cardpnlArt },
 };
 </script>

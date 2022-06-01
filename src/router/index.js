@@ -6,16 +6,10 @@ import FestivalView     from      '../views/FestivalView.vue'
 import ContactView     from      '../views/ContactView.vue'
 
 import ConcertView     from      '../views/ConcertView.vue'
+import ArtisteView     from      '../views/ArtisteView.vue'
+import MentionsView     from      '../views/MentionsView.vue'
 
-import ListeVideo     from      '../views/video/ListeView.vue'
-import CreateVideo     from      '../views/video/CreateView.vue'
 
-import ListeParticipant     from      '../views/participant/ListeView.vue'
-import CreateParticipant     from      '../views/participant/CreateView.vue'
-
-import ListeCategorie     from      '../views/categorie/ListeView.vue'
-
-import ListePays     from      '../views/pays/ListeView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,17 +19,11 @@ const router = createRouter({
     { path: '/artistes',    name: 'ArtistesView',             component: ArtistesView  },
     { path: '/festival',    name: 'FestivalView',             component: FestivalView  },
     { path: '/contact',    name: 'ContactView',             component: ContactView  },
+
     { path: '/concert',    name: 'ConcertView',             component: ConcertView  },
+    { path: '/artiste',    name: 'ArtisteView',             component: ArtisteView  },
+    { path: '/mentions',    name: 'MentionsView',             component: MentionsView  },
 
-    { path: '/videos',    name: 'ListeVideo',             component: ListeVideo  },
-    { path: '/createVideo',    name: 'CreateVideo',             component: CreateVideo  },
-
-    { path: '/participants',    name: 'ListeParticipant',             component: ListeParticipant  },
-    { path: '/createParticipant',    name: 'CreateParticipant',             component: CreateParticipant  },
-
-    { path: '/categories',    name: 'ListeCategorie',             component: ListeCategorie  },
-
-    { path: '/pays',    name: 'ListePays',             component: ListePays  },
 
 
   ]

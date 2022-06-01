@@ -2,7 +2,7 @@
    <h3 class="titre text-[20px] lg:text-[30px]">ARTISTES</h3>
 
   <div class="flex flex-col justify-center items-center">
-    <cardpnlArt />
+    <RouterLink to="/artiste"><cardpnlArt /></RouterLink>
     <cardboobaArt/>
     <cardjosmanArt/>
     <carddtfArt/>

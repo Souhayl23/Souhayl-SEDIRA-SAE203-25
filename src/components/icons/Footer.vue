@@ -21,7 +21,7 @@
       <div
         class="flex justify-start items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2.5 p-1"
       >
-        <p class="flex-grow w-[287px] text-sm text-left text-white">Mention légale</p>
+        <RouterLink to="/mentions" class="flex-grow w-[287px] text-sm text-left text-white">Mention légale</RouterLink>
       </div>
     </div>
   </div>
