@@ -48,7 +48,6 @@
     <RouterView />
 
     <Footer />
-
   </div>
 
 

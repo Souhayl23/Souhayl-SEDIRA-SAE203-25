@@ -1,18 +1,47 @@
 <template>
+  <main class="mx-6 mb-6 sm:mx-32 md:mx-44 md:mt-6 lg:mx-64 lg:grid lg:grid-cols-2 lg:gap-40">
+    <img :src="imageActuelle" class="mx-auto mt-6 md:w-full" />
+    <form enctype="multipart/form-data"  @submit.prevent="deleteArtiste">
+      <h1 class="mb-10 font-barlow text-2xl font-bold uppercase">Suppression d'un artiste</h1>
+      <div class="mb-10 flex w-full">
+        <div class="bg-[#f6c139] p-3 font-barlow text-xl font-bold uppercase text-gray-100">Nom</div>
+        <input
+          type="text"
+          placeholder="Nom de l'artiste"
+          class="w-full border-[1px] border-gray-400 bg-gray-100 p-2.5 font-barlow text-xl font-bold uppercase text-gray-900"
+          v-model="artiste.nom"
+          disabled
+        />
+      </div>
+      <div class="mb-10 flex w-full">
+        <div class="bg-[#f6c139] p-3 font-barlow text-xl font-bold uppercase text-gray-100">Bio</div>
+        <input
+          type="text"
+          placeholder="Biographie"
+          class="w-full border-[1px] border-gray-400 bg-gray-100 p-2.5 font-barlow text-xl font-bold uppercase text-gray-900"
+          v-model="artiste.bio"
+          disabled
+        />
+      </div>
 
- <div class="flex flex-col mt-[50px] mb-[140px]" >
-   <div class="px-9 py-3">
+      <h5 class="mb-10 w-full bg-[#F00200] p-3 text-center font-barlow text-xl font-bold uppercase text-gray-100">
+        Attention, vous êtes sur le point de supprimer cet artiste! Validez vous votre choix?
+      </h5>
 
-      <h4 class="titre flex flex-col justify-center items-center text-[#f6c139] text-[30px] lg:text-[40px] pb-2">{{ artiste.nom }}</h4>
-       <img :src="imageActuelle" :alt="'photo de ' + artiste.nom" class=" w-[60%] h-[60%] mx-auto my-6 "/>
-       <p class="mx-6">{{ artiste.bio }}</p></div>
-      
+      <div class="flex flex-row justify-between gap-5">
+        <button type="submit" class="w-full bg-[#f6c139] p-3 font-barlow text-xl font-bold uppercase text-gray-100">Supprimer</button>
 
-</div>
+        <router-link to="/listea">
+          <div class="w-full bg-[#f6c139] p-3 font-barlow text-xl font-bold uppercase text-gray-100">
+            Annuler
+          </div>
+        </router-link>
+      </div>
 
-
-
-
+    </form>
+    <div>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -78,9 +107,14 @@ export default {
           console.log("erreur dl", error);
         });
     },
+    async deleteArtiste() {
+      const firestore = getFirestore();
+      await deleteDoc(doc(firestore, "artiste", this.$route.params.id));
+      const storage = getStorage();
+      let docRef = ref(storage, "artiste/" + this.artiste.img);
+      deleteObject(docRef);
+      this.$router.push("/listea");
+    },
   },
 };
 </script>
-
-
-

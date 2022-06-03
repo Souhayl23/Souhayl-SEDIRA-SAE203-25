@@ -1,13 +1,9 @@
 <template>
 <div class="w-[70%]">
-    <div class="grid grid-cols-2">
+    <div>
         <div class="">
             <label for="nom" class="text-sm font-black text-left text-white" />Nom<br />
-            <input id="nom" type="text" class="text-sm font-black text-left text-black" />
-        </div>
-        <div class="justify-self-end">
-            <label for="nom" class="text-sm font-black text-left text-white" />Prénom<br />
-            <input id="nom" type="text" class="text-sm font-black text-left text-black" />
+            <input id="nom" type="text" class=" w-full text-sm font-black text-left text-black" />
         </div>
     </div>
     <div>

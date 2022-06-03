@@ -11,6 +11,11 @@
       <div
         class="flex items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2.5 p-1"
       >
+        <RouterLink to="/admin" class="flex-grow w-[287px] text-[22px] text-right text-white">ADMIN</RouterLink>
+      </div>
+            <div
+        class="flex items-start self-stretch flex-grow-0 flex-shrink-0 relative gap-2.5 p-1"
+      >
         <p class="flex-grow w-[287px] text-[22px] text-left text-white">A propos</p>
       </div>
       <div
