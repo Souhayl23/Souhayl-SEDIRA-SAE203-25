@@ -41,12 +41,79 @@
 </template>
 
 <script>
+// Bibliothèque Firestore : import des fonctions
 import boutonorange from "../components/icons/bouton-orange.vue";
 import boutongrey from "../components/icons/bouton-grey.vue";
+import {
+  getFirestore, // Obtenir le Firestore
+  collection, // Utiliser une collection de documents
+  doc, // Obtenir un document par son id
+  getDocs, // Obtenir la liste des documents d'une collection
+  addDoc, // Ajouter un document à une collection
+  updateDoc, // Mettre à jour un document dans une collection
+  deleteDoc, // Supprimer un document d'une collection
+  onSnapshot, // Demander une liste de documents d'une collection, en les synchronisant
+  query, // Permet d'effectuer des requêtes sur Firestore
+  orderBy, // Permet de demander le tri d'une requête query
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-firestore.js";
+
+// Cloud Storage : import des fonctions
+import {
+  getStorage, // Obtenir le Cloud Storage
+  ref, // Pour créer une référence à un fichier à uploader
+  getDownloadURL, // Permet de récupérer l'adress complète d'un fichier du Storage
+  uploadString, // Permet d'uploader sur le Cloud Storage une image en Base64
+} from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js";
 
 export default {
-  name:'ProgrammationView',
+    name:'ProgrammationView',
   components: {boutonorange, boutongrey},
+  data() {
+    return {
+      listeConcert: [],
+      nom: null,
+      horaire: null,
+    };
+  },
+  mounted() {
+    this.getConcert();
+  },
+  methods: {
+    async getConcert() {
+      const firestore = getFirestore();
+      const dbConcert = collection(firestore, "concert");
+      const q = query(dbConcert, orderBy("nom"));
+
+      await onSnapshot(q, (snapshot) => {
+        this.listeConcert = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      });
+      console.log(this.listeConcert);
+    },
+    async createConcert() {
+      const firestore = getFirestore();
+      const dbconcert = collection(firestore, "concert");
+      const docRef = await addDoc(dbconcert, {
+        nom: this.nom,
+        horaire: this.horaire,
+      });
+      console.log("document créé avec le id : ", docRef.id);
+    },
+
+    async updateConcert(concert) {
+      const firestore = getFirestore();
+      const docRef = doc(firestore, "concert", concert.id);
+      await updateDoc(docRef, {
+        nom: concert.nom,
+        horaire: concert.horaire,
+      });
+    },
+
+    async deleteConcert(concert) {
+      const firestore = getFirestore();
+      const docRef = doc(firestore, "concert", concert.id);
+      await deleteDoc(docRef);
+    },
+  },
 };
 </script>
 
